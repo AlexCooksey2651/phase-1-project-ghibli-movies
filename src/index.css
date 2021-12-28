@@ -1,0 +1,25 @@
+body {
+    margin: 10;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: powderblue;
+}
+
+.movie-card {
+    border: black solid 1px;
+    margin-bottom: 20px
+    
+}
+
+.movie-image {
+    height: 300px;
+    width: auto;
+    padding: 10px
+}
+
+#header {
+    text-align: center;
+}
+
+.movie-title {
+    text-align: center;
+}
