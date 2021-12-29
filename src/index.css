@@ -1,19 +1,26 @@
 body {
-    margin: 10;
+    margin: 20px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: powderblue;
 }
 
 .movie-card {
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+    /* text-align: center; */
+    height: 400px;
+    vertical-align:center;
     border: black solid 1px;
-    margin-bottom: 20px
-    
+    width: 80%
 }
 
 .movie-image {
     height: 300px;
     width: auto;
-    padding: 10px
+    padding: 10px;
+    float: left;
+    margin-left: 20px;
 }
 
 #header {
@@ -22,4 +29,29 @@ body {
 
 .movie-title {
     text-align: center;
+}
+
+.watch-list {
+    margin-bottom: 20px;
+}
+
+#information {
+    margin: 40px;
+}
+
+#movie-display, #watchlist {
+    display: inline-block;
+    width: 60%
+}
+
+#watchlist {
+    border: black solid 1px;
+    margin-top: 50px;
+    margin-right: 100px;
+    position: fixed;
+    
+}
+
+ul {
+    margin-left: 100px;
 }
