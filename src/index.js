@@ -14,6 +14,19 @@ function fetchMoviesFromAPI() {
 }
 fetchMoviesFromAPI()
 
+function loadWatchList() {
+    fetch('http://localhost:3000/watchlist_movies')
+    .then(response => response.json())
+    .then(movies => {
+        for (const movie of movies) {
+            let movieBullet = document.createElement('li')
+            movieBullet.innerHTML = movie.title
+        }
+    })
+    console.log("hello")
+}
+loadWatchList()
+
 function createMovieCard(movie) {
     let movieCard = document.createElement('div')
     movieCard.className = "movie-card"
@@ -46,17 +59,40 @@ function createMovieCard(movie) {
     movieCard.appendChild(rating)
 
     let watchListButton = document.createElement('button')
-    watchListButton.className = "watch-list"
+    watchListButton.className = "watchlist-button"
     watchListButton.innerText = "Add to Watchlist"
     watchListButton.addEventListener('click', function(evt) {
         let movieName = evt.target.parentNode.firstChild.textContent
         if (watchListButton.innerText === "Add to Watchlist") {
+            // fetch('http://localhost:3000/watchlist_movies'), {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         Accept: "application/json",
+            //     },
+            //     body: JSON.stringify({
+            //         title: `${movieName}`,
+            //     })
+            // }
+            // .then(response => response.json())
+            // .then(movie => console.log(movie))
+
             let movieBullet = document.createElement('li')
             movieBullet.id = `${movieName}-bullet`
             movieBullet.innerHTML = movieName
             watchlist.appendChild(movieBullet)
             watchListButton.innerText = "Remove from Watchlist"
+
         } else if (watchListButton.innerText === "Remove from Watchlist") {
+            // fetch(`http://localhost:3000/watchlist_movies/${movie.id}`), {
+            //     method: "DELETE",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         Accept: "application/json",
+            //     }
+            // }
+            // .then(response => response.json)
+            // .then(data => console.log(data))
             let rightBullet = document.getElementById(`${movieName}-bullet`)
             rightBullet.remove()
             watchListButton.innerText = "Add to Watchlist"
@@ -64,11 +100,22 @@ function createMovieCard(movie) {
     })
     movieCard.appendChild(watchListButton)
 
-    let movieDescription = document.createElement('p')
+    let movieDescription = document.createElement('button')
     movieDescription.className = "movie-description"
     movieDescription.innerText = "Click to See Description"
-    movieDescription.addEventListener('click', function(evt) {
-        evt.target.innerText = movie.description
+    movieDescription.addEventListener('click', function() {
+        if (movieDescription.innerText === "Click to See Description") {
+            let movieInfo = document.createElement('p')
+            console.log(movie.information)
+            movieInfo.id = `${movie.title}-information`
+            movieInfo.textContent = movie.description
+            movieCard.appendChild(movieInfo)
+            movieDescription.innerText = "Hide Description"
+        } else if (movieDescription.innerText === "Hide Description") {
+            movieDescription.innerText = "Click to See Description"
+            let textBlock = document.getElementById(`${movie.title}-information`)
+            textBlock.remove()
+        }
     })
     movieCard.appendChild(movieDescription)
 
@@ -111,4 +158,6 @@ function sortByRating() {
 
 }
 
+function postMovie(movie) {
 
+}

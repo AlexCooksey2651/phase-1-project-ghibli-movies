@@ -13,7 +13,6 @@ body {
     border-radius: 25px;
     padding: 15px;
     text-align: center;
-    
 }
 
 .movie-image {
@@ -65,7 +64,7 @@ body {
 }
 
 #sorter {
-    text-align: center;
+    margin-left: 300px;
 }
 
 #sort-movies {
@@ -73,7 +72,10 @@ body {
     border-radius: 5px;
 }
 
-.watchlist-button {
+.watchlist-button, .movie-description {
     background-color: mintcream;
     border-radius: 25px;
+    display: inline-block;
+    justify-content: center;
 }
+
