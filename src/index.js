@@ -1,6 +1,7 @@
 const movieDisplay = document.getElementById('movie-display')
 const watchlist = document.getElementById('watchlist')
 const sorter = document.getElementById('sorter')
+const movieCards = document.querySelectorAll('.movie-card')
 
 function fetchMoviesFromAPI() {
     fetch('https://ghibliapi.herokuapp.com/films')
@@ -16,7 +17,7 @@ fetchMoviesFromAPI()
 function createMovieCard(movie) {
     let movieCard = document.createElement('div')
     movieCard.className = "movie-card"
-    movieCard.id = `${movie.id}-card`
+    movieCard.id = `${movie.title}-card`
     movieDisplay.appendChild(movieCard)
 
     let movieTitle = document.createElement('h2')
@@ -109,10 +110,5 @@ function sortByRunTime() {
 function sortByRating() {
 
 }
-
-
-
-// function sortByTitle
-
 
 
