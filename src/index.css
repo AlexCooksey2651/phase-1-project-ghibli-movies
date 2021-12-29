@@ -5,15 +5,15 @@ body {
 }
 
 .movie-card {
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* text-align: center; */
+    background-color: mediumturquoise;
+    margin: 20px;
     height: 400px;
-    width: 80%;
-    /* vertical-align: middle; */
+    width: 60%;
     border: black solid 1px;
     border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    
 }
 
 .movie-image {
@@ -21,8 +21,13 @@ body {
     width: auto;
     padding: 10px;
     float: left;
-    margin-left: 20px;
+    margin-left: 50px;
     vertical-align: middle;
+    border-radius: 25px;
+}
+
+.release-date {
+    padding-top: 60px;
 }
 
 #header {
@@ -31,10 +36,6 @@ body {
 
 .movie-title {
     text-align: center;
-}
-
-.watch-list {
-    margin-bottom: 20px;
 }
 
 #information {
@@ -52,11 +53,11 @@ body {
 #watchlist {
     border: black solid 1px;
     border-radius: 25px;
-    margin-top: 50px;
-    margin-right: 100px;
+    margin: 50px;
     position: fixed;
     padding: 20px 40px;
     width: 25%;
+    background-color: mediumturquoise;
 }
 
 #watchlist h3 {
@@ -65,4 +66,14 @@ body {
 
 #sorter {
     text-align: center;
+}
+
+#sort-movies {
+    background-color: mintcream;
+    border-radius: 5px;
+}
+
+.watchlist-button {
+    background-color: mintcream;
+    border-radius: 25px;
 }
