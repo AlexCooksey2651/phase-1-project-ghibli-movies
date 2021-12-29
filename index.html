@@ -20,13 +20,13 @@
                 <p><i>Passage taken from </i> <a href="https://ghiblicollection.com/about">ghiblicollection.com.</a></p>
             </div>
             <div id="movie-display">
-                <p>Sort movies by: 
+                <p id= "sorter">Sort movies by: 
                     <span>
-                        <select name="select">
-                            <option value="title">Title A-Z</option>
-                            <option value="date">Release Date</option>
-                            <option value="runtime">Movie Length</option>
-                            <option value="rating">Rotten Tomatoes Score</option>
+                        <select id="sort-movies" name="select">
+                            <option value="title">Title (A-Z)</option>
+                            <option value="date">Release Date (Old-New)</option>
+                            <option value="runtime">Movie Length (Low-High)</option>
+                            <option value="rating">Rotten Tomatoes Score (High-Low)</option>
                         </select>
                     </span>
                 </p>
@@ -34,7 +34,7 @@
             </div>
 
             <div id="watchlist">
-                <p>Current Watchlist</p>
+                <h3>Current Watchlist</h3>
                 <ul id="movie-list">
 
                 </ul>
@@ -51,8 +51,6 @@
             <!-- add to watchlist -->
 
             <!-- watchlist (can use DB.JSON) -->
-            <!-- add to already seen -->
-            <!-- remove from watchlist -->
             <!-- finished watching -->
 
 

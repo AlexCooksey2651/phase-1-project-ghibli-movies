@@ -1,5 +1,6 @@
 const movieDisplay = document.getElementById('movie-display')
 const watchlist = document.getElementById('watchlist')
+const sorter = document.getElementById('sorter')
 
 function fetchMoviesFromAPI() {
     fetch('https://ghibliapi.herokuapp.com/films')
@@ -45,17 +46,45 @@ function createMovieCard(movie) {
 
     let watchListButton = document.createElement('button')
     watchListButton.className = "watch-list"
-    watchListButton.innerText = "Add to Watch List"
+    watchListButton.innerText = "Add to Watchlist"
     watchListButton.addEventListener('click', function(evt) {
         let movieName = evt.target.parentNode.firstChild.textContent
-        let movieBullet = document.createElement('li')
-        movieBullet.className = "watchlist-item"
-        movieBullet.innerHTML = movieName
-        watchlist.appendChild(movieBullet)
+        if (watchListButton.innerText === "Add to Watchlist") {
+            let movieBullet = document.createElement('li')
+            movieBullet.id = `${movieName}-bullet`
+            movieBullet.innerHTML = movieName
+            watchlist.appendChild(movieBullet)
+            watchListButton.innerText = "Remove from Watchlist"
+        } else if (watchListButton.innerText === "Remove from Watchlist") {
+            let rightBullet = document.getElementById(`${movieName}-bullet`)
+            rightBullet.remove()
+            watchListButton.innerText = "Add to Watchlist"
+        }
     })
     movieCard.appendChild(watchListButton)
+
+    let movieDescription = document.createElement('p')
+    movieDescription.className = "movie-description"
+    movieDescription.innerText = "Click to See Description"
+    movieDescription.addEventListener('click', function(evt) {
+        evt.target.innerText = movie.description
+    })
+    movieCard.appendChild(movieDescription)
+
 }
 
+sorter.addEventListener('change', function(evt) {
+    console.log(evt.target.value)
+    // if (evt.target.value === title) {
+    //     sortByTitle()
+    // } else if (evt.target.value === date) {
+    //     sortByReleaseDate()
+    // } else if (evt.target.value === runtime) {
+    //     sortByRunTime()
+    // } else if (evt.target.value === rating) {
+    //     sortByRating()
+    // }
+})
 // function addToWatchList(movie) {
 //     console.log(movie.title)
 //     let movieBullet = document.createElement('li')
@@ -63,16 +92,27 @@ function createMovieCard(movie) {
 //     movieBullet.innerHTML = movie.title
 //     watchlist.appendChild(movieBullet)
 // }
-// function sortByRottenTomatoes
 
-// function sortByRunTime
+
+function sortByTitle() {
+
+}
+
+function sortByReleaseDate() {
+
+}
+
+function sortByRunTime() {
+
+}
+
+function sortByRating() {
+
+}
+
+
 
 // function sortByTitle
 
-// function showDescription
-
-// function addToWatchList
-
-// function addToAlreadySeen
 
 

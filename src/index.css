@@ -39,9 +39,12 @@ body {
     margin: 40px;
 }
 
+#movie-display {
+    width: 60%;
+}
+
 #movie-display, #watchlist {
     display: inline-block;
-    width: 60%
 }
 
 #watchlist {
@@ -49,9 +52,10 @@ body {
     margin-top: 50px;
     margin-right: 100px;
     position: fixed;
-    
+    padding: 20px 40px;
+    width: 25%;
 }
 
-ul {
-    margin-left: 100px;
+#sorter {
+    text-align: center;
 }
