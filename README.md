@@ -6,9 +6,11 @@ Studio Ghibli Movie Guide is a page that helps users view the entire catalog of 
 
 This application was built using HTML, CSS, and Javascript.
 
-Sleeping Totoro GIF taken from [link](https://thumbs.gfycat.com/OfficialShortDotterel-mobile.mp4)
+All film images and information taken from [Studio Ghibli API](https://ghibliapi.herokuapp.com/#)
 
-Studio Ghibli informational paragraph taken from  [link](https://ghiblicollection.com/about)
+Sleeping Totoro GIF taken from [here](https://thumbs.gfycat.com/OfficialShortDotterel-mobile.mp4)
+
+Studio Ghibli informational paragraph taken from [ghiblicollection.com](https://ghiblicollection.com/about)
 
 
 
