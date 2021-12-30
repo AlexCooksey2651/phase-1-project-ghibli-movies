@@ -1,31 +1,35 @@
 const movieDisplay = document.getElementById('movie-display')
 const watchlist = document.getElementById('watchlist')
 const sorter = document.getElementById('sorter')
-const movieCards = document.querySelectorAll('.movie-card')
+// let movieCards = document.querySelectorAll('.movie-card')
+let moviesArray = []
 
 function fetchMoviesFromAPI() {
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(response => response.json())
     .then(movies => {
         for (const movie of movies) {
+            moviesArray.push(movie)
             createMovieCard(movie)
         }
     })
 }
 fetchMoviesFromAPI()
 
-function loadWatchList() {
-    fetch('http://localhost:3000/watchlist_movies')
-    .then(response => response.json())
-    .then(movies => {
-        for (const movie of movies) {
-            let movieBullet = document.createElement('li')
-            movieBullet.innerHTML = movie.title
-        }
-    })
-    console.log("hello")
-}
-loadWatchList()
+
+
+// function loadWatchList() {
+//     fetch('http://localhost:3000/watchlist_movies')
+//     .then(response => response.json())
+//     .then(movies => {
+//         for (const movie of movies) {
+//             let movieBullet = document.createElement('li')
+//             movieBullet.innerHTML = movie.title
+//         }
+//     })
+//     console.log("hello")
+// }
+// loadWatchList()
 
 function createMovieCard(movie) {
     let movieCard = document.createElement('div')
@@ -123,15 +127,15 @@ function createMovieCard(movie) {
 
 sorter.addEventListener('change', function(evt) {
     console.log(evt.target.value)
-    // if (evt.target.value === title) {
-    //     sortByTitle()
-    // } else if (evt.target.value === date) {
-    //     sortByReleaseDate()
-    // } else if (evt.target.value === runtime) {
-    //     sortByRunTime()
-    // } else if (evt.target.value === rating) {
-    //     sortByRating()
-    // }
+    if (evt.target.value === "title") {
+        sortByTitle()
+    } else if (evt.target.value === "date") {
+        sortByReleaseDate()
+    } else if (evt.target.value === "runtime") {
+        sortByRunTime()
+    } else if (evt.target.value === "rating") {
+        sortByRating()
+    }
 })
 // function addToWatchList(movie) {
 //     console.log(movie.title)
@@ -143,21 +147,84 @@ sorter.addEventListener('change', function(evt) {
 
 
 function sortByTitle() {
-
+    removeCards()
+    moviesArray.sort(titleCompare)
+    for (let i = 0; i < moviesArray.length; i++) {
+        createMovieCard(moviesArray[i])
+    }
 }
 
 function sortByReleaseDate() {
-
+    removeCards()
+    moviesArray.sort(dateCompare)
+    reRender(moviesArray)
 }
 
 function sortByRunTime() {
-
+    removeCards()
+    moviesArray.sort(lengthCompare)
+    reRender(moviesArray)
 }
 
 function sortByRating() {
-
+    removeCards()
+    moviesArray.sort(ratingCompare)
+    reRender(moviesArray)
 }
 
 function postMovie(movie) {
+    
+}
 
+function removeCards() {
+    const movieCards = document.getElementsByClassName('movie-card')
+    console.log(movieCards)
+    // for (let i = 0; i < movieCards.length; i ++) {
+    //     console.log(movieCards[i])
+    //     movieCards[i].remove()
+    // }
+    for (let card of movieCards) {
+        card.remove()
+    }
+}
+
+function titleCompare(a, b) {
+    if (a.title < b.title) {
+        return -1
+    } else if (a.title > b.title) {
+        return 1
+    } else if (a.title = b.title) 
+        return 0
+}
+
+function dateCompare(a,b,) {
+    if (a.release_date > b.release_date) {
+        return -1
+    } else if (a.release_date < b.release_date) {
+        return 1
+    } else if (a.release_date = b.release_date) 
+        return 0
+}
+
+function lengthCompare(a,b) {
+    if (a.running_time > b.running_time) {
+        return -1
+    } else if (a.running_time < b.running_time) {
+        return 1
+    } else if (a.running_time = b.running_time) 
+        return 0
+}
+
+function ratingCompare(a,b) {
+    if (a.rt_score > b.rt_score) {
+        return -1
+    } else if (a.rt_score < b.rt_score) {
+        return 1
+    } else if (a.rt_score = b.rt_score) 
+        return 0
+}
+
+function reRender(array) {
+    for (let i = 0; i < array.length; i++) {
+        createMovieCard(array[i])
 }

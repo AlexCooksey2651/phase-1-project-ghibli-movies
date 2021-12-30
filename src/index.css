@@ -1,9 +1,12 @@
 body {
-    margin: 20px;
+    margin: 60px 20px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: powderblue;
 }
 
+#header {
+    font-size: 2.5em;
+}
 .movie-card {
     background-color: mediumturquoise;
     margin: 20px;
