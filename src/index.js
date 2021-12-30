@@ -1,7 +1,6 @@
 const movieDisplay = document.getElementById('movie-display')
 const watchlist = document.getElementById('watchlist')
 const sorter = document.getElementById('sorter')
-// let movieCards = document.querySelectorAll('.movie-card')
 let moviesArray = []
 
 function fetchMoviesFromAPI() {
@@ -122,11 +121,10 @@ function createMovieCard(movie) {
         }
     })
     movieCard.appendChild(movieDescription)
-
 }
 
 sorter.addEventListener('change', function(evt) {
-    console.log(evt.target.value)
+    removeCards()
     if (evt.target.value === "title") {
         sortByTitle()
     } else if (evt.target.value === "date") {
@@ -137,55 +135,10 @@ sorter.addEventListener('change', function(evt) {
         sortByRating()
     }
 })
-// function addToWatchList(movie) {
-//     console.log(movie.title)
-//     let movieBullet = document.createElement('li')
-//     movieBullet.className = "watchlist-item"
-//     movieBullet.innerHTML = movie.title
-//     watchlist.appendChild(movieBullet)
-// }
-
 
 function sortByTitle() {
-    removeCards()
     moviesArray.sort(titleCompare)
-    for (let i = 0; i < moviesArray.length; i++) {
-        createMovieCard(moviesArray[i])
-    }
-}
-
-function sortByReleaseDate() {
-    removeCards()
-    moviesArray.sort(dateCompare)
     reRender(moviesArray)
-}
-
-function sortByRunTime() {
-    removeCards()
-    moviesArray.sort(lengthCompare)
-    reRender(moviesArray)
-}
-
-function sortByRating() {
-    removeCards()
-    moviesArray.sort(ratingCompare)
-    reRender(moviesArray)
-}
-
-function postMovie(movie) {
-    
-}
-
-function removeCards() {
-    const movieCards = document.getElementsByClassName('movie-card')
-    console.log(movieCards)
-    // for (let i = 0; i < movieCards.length; i ++) {
-    //     console.log(movieCards[i])
-    //     movieCards[i].remove()
-    // }
-    for (let card of movieCards) {
-        card.remove()
-    }
 }
 
 function titleCompare(a, b) {
@@ -197,6 +150,11 @@ function titleCompare(a, b) {
         return 0
 }
 
+function sortByReleaseDate() {
+    moviesArray.sort(dateCompare)
+    reRender(moviesArray)
+}
+
 function dateCompare(a,b,) {
     if (a.release_date > b.release_date) {
         return -1
@@ -206,25 +164,48 @@ function dateCompare(a,b,) {
         return 0
 }
 
+function sortByRunTime() {
+    moviesArray.sort(lengthCompare)
+    reRender(moviesArray)
+}
+
 function lengthCompare(a,b) {
-    if (a.running_time > b.running_time) {
+    if (parseInt(a.running_time) < parseInt(b.running_time)) {
         return -1
-    } else if (a.running_time < b.running_time) {
+    } else if (parseInt(a.running_time) > parseInt(b.running_time)) {
         return 1
-    } else if (a.running_time = b.running_time) 
+    } else if (parseInt(a.running_time) === parseInt(b.running_time)) 
         return 0
 }
 
+function sortByRating() {
+    moviesArray.sort(ratingCompare)
+    reRender(moviesArray)
+}
+
 function ratingCompare(a,b) {
-    if (a.rt_score > b.rt_score) {
+    if (parseInt(a.rt_score) > parseInt(b.rt_score)) {
         return -1
-    } else if (a.rt_score < b.rt_score) {
+    } else if (parseInt(a.rt_score) < parseInt(b.rt_score)) {
         return 1
-    } else if (a.rt_score = b.rt_score) 
+    } else if (parseInt(a.rt_score) === parseInt(b.rt_score)) 
         return 0
+}
+
+function removeCards() {
+    const movieCards = document.getElementsByClassName('movie-card')
+    console.log(movieCards)
+    // for (let i = 0; i < movieCards.length; i ++) {
+    //     console.log(movieCards[i])
+    //     movieCards[i].remove()
+    // }
+    for (const card of movieCards) {
+        card.remove()
+    }
 }
 
 function reRender(array) {
     for (let i = 0; i < array.length; i++) {
         createMovieCard(array[i])
+    }
 }

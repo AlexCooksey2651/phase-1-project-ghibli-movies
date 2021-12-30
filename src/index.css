@@ -6,7 +6,25 @@ body {
 
 #header {
     font-size: 2.5em;
+    text-align: center;
 }
+
+#information {
+    margin: 40px;
+}
+
+#movie-display, #watchlist {
+    display: inline-block;
+}
+
+#movie-display {
+    width: 60%;
+}
+
+#sorter {
+    margin-left: 300px;
+}
+
 .movie-card {
     background-color: mediumturquoise;
     margin: 20px;
@@ -19,7 +37,7 @@ body {
 }
 
 .movie-image {
-    height: 300px;
+    height: 70%;
     width: auto;
     padding: 10px;
     float: left;
@@ -28,28 +46,19 @@ body {
     border-radius: 25px;
 }
 
-.release-date {
-    padding-top: 60px;
-}
-
-#header {
-    text-align: center;
-}
-
 .movie-title {
     text-align: center;
 }
 
-#information {
-    margin: 40px;
+.release-date {
+    padding-top: 60px;
 }
 
-#movie-display {
-    width: 60%;
-}
-
-#movie-display, #watchlist {
+.watchlist-button, .movie-description {
+    background-color: mintcream;
+    border-radius: 25px;
     display: inline-block;
+    justify-content: center;
 }
 
 #watchlist {
@@ -66,19 +75,10 @@ body {
     text-align: center;
 }
 
-#sorter {
-    margin-left: 300px;
-}
-
 #sort-movies {
     background-color: mintcream;
     border-radius: 5px;
 }
 
-.watchlist-button, .movie-description {
-    background-color: mintcream;
-    border-radius: 25px;
-    display: inline-block;
-    justify-content: center;
-}
+
 
