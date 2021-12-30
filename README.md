@@ -1,5 +1,7 @@
 # Phase 1 Project: Studio Ghibli Movie Guide
 
+![Image](https://saltyworld.net/wp-content/uploads/2021/05/6ab1f919524481da3435a5ee3b1313fac2898c70_sgcollage.jpeg)
+
 ## Functional Description:
 The Studio Ghibli Movie Guide has three main features. 
 
