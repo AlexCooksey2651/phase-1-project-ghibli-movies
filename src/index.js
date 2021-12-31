@@ -193,13 +193,15 @@ function ratingCompare(a,b) {
 }
 
 function removeCards() {
-    const movieCards = document.getElementsByClassName('movie-card')
+    const movieCards = document.querySelectorAll('.movie-card')
     console.log(movieCards)
-    // for (let i = 0; i < movieCards.length; i ++) {
+    console.log(movieCards.length)
+    // for (let i = 0; i < 21; i ++) {
     //     console.log(movieCards[i])
-    //     movieCards[i].remove()
+    //     movieCards[i].parentNode.removeChild(div)
     // }
     for (const card of movieCards) {
+        console.log(card)
         card.remove()
     }
 }
