@@ -8,10 +8,10 @@
     <body>
         <header id="header">
             <h1>Come Watch Some Studio Ghibli Movies!</h1>
-            <video autoplay muted loop id="totoro-gif">
+            <!-- <video autoplay muted loop id="totoro-gif">
                 <source src="https://thumbs.gfycat.com/OfficialShortDotterel-mobile.mp4" type="video/mp4" />
                 <p>Sorry, it looks like your browser doesn't support this video!</p>
-            </video>
+            </video> -->
         </header>
         <main>
             <div id = "information">
@@ -28,15 +28,13 @@
                     <span>
                         <select id="sort-movies" name="select">
                             <option value="title">Title (A-Z)</option>
-                            <option value="date">Release Date (New-Old)</option>
-                            <option value="runtime">Movie Length (Short-Long)</option>
+                            <option value="date">Release Date (Old-New)</option>
+                            <option value="runtime">Movie Length (Low-High)</option>
                             <option value="rating">Rotten Tomatoes Score (High-Low)</option>
                         </select>
                     </span>
                 </p>
-
             </div>
-
             <div id="watchlist">
                 <h3>Current Watchlist</h3>
                 <ul id="movie-list">

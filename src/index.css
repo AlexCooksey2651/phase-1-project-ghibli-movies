@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 60px 20px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: powderblue;
@@ -62,6 +62,77 @@ body {
 }
 
 #watchlist {
+    border: black solid 2px;
+    border-radius: 25px;
+    margin: 50px;
+    padding: 20px 40px;
+    position: fixed;
+    width: 25%;
+    background-color: mediumturquoise;
+}
+
+#watchlist h3 {
+    text-align: center;
+}
+
+#sort-movies {
+    background-color: mintcream;
+    border-radius: 5px;
+} */
+
+body {
+    margin: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: powderblue;
+}
+
+.movie-card {
+    background-color: mediumturquoise;
+    margin: 20px;
+    height: 400px;
+    width: 60%;
+    border: black solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+.movie-image {
+    height: 300px;
+    width: auto;
+    padding: 10px;
+    float: left;
+    margin-left: 50px;
+    vertical-align: middle;
+    border-radius: 25px;
+}
+
+.release-date {
+    padding-top: 60px;
+}
+
+#header {
+    text-align: center;
+    font-size: 2em;
+}
+
+.movie-title {
+    text-align: center;
+}
+
+#information {
+    margin: 40px;
+}
+
+#movie-display {
+    width: 60%;
+}
+
+#movie-display, #watchlist {
+    display: inline-block;
+}
+
+#watchlist {
     border: black solid 1px;
     border-radius: 25px;
     margin: 50px;
@@ -75,10 +146,20 @@ body {
     text-align: center;
 }
 
+#sorter {
+    margin-left: 300px;
+}
+
 #sort-movies {
     background-color: mintcream;
     border-radius: 5px;
 }
 
+.watchlist-button, .movie-description {
+    background-color: mintcream;
+    border-radius: 25px;
+    display: inline-block;
+    justify-content: center;
+}
 
 

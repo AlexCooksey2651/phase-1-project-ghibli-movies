@@ -194,12 +194,6 @@ function ratingCompare(a,b) {
 
 function removeCards() {
     const movieCards = document.querySelectorAll('.movie-card')
-    console.log(movieCards)
-    console.log(movieCards.length)
-    // for (let i = 0; i < 21; i ++) {
-    //     console.log(movieCards[i])
-    //     movieCards[i].parentNode.removeChild(div)
-    // }
     for (const card of movieCards) {
         console.log(card)
         card.remove()
@@ -211,3 +205,4 @@ function reRender(array) {
         createMovieCard(array[i])
     }
 }
+
