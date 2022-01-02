@@ -32,6 +32,8 @@ Further functionality could be added with a **db.json** file so that the user's 
 ---
 
 ## Resources:
+[Medium post on the creation of this project](https://medium.com/@aecooksey2651/taking-time-to-appreciate-netflix-reflections-on-my-first-javascript-project-6e4a630af973)
+
 Image at the top of this page taken from [here](https://saltyworld.net/wp-content/uploads/2021/05/6ab1f919524481da3435a5ee3b1313fac2898c70_sgcollage.jpeg)
 
 This application was built using HTML, CSS, and JavaScript.
