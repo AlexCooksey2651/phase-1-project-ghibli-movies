@@ -43,6 +43,8 @@ function createMovieCard(movie) {
 
     let movieImg = document.createElement('img')
     movieImg.className = "movie-image"
+    movieImg.alt = `${movie.title} Poster`
+    movieImg.title = `${movie.title} Poster`
     movieImg.src = movie.image
     movieCard.appendChild(movieImg)
 
