@@ -17,18 +17,19 @@ fetchMoviesFromAPI()
 
 
 
-// function loadWatchList() {
-//     fetch('http://localhost:3000/watchlist_movies')
-//     .then(response => response.json())
-//     .then(movies => {
-//         for (const movie of movies) {
-//             let movieBullet = document.createElement('li')
-//             movieBullet.innerHTML = movie.title
-//         }
-//     })
-//     console.log("hello")
-// }
-// loadWatchList()
+function loadWatchList() {
+    fetch('http://localhost:3000/watchlist_movies')
+    .then(response => response.json())
+    .then(movies => {
+        for (const movie of movies) {
+            let movieBullet = document.createElement('li')
+            movieBullet.innerHTML = movie.title
+
+        }
+    })
+    console.log("hello")
+}
+loadWatchList()
 
 function createMovieCard(movie) {
     let movieCard = document.createElement('div')
