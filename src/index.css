@@ -2,18 +2,15 @@ body {
     margin: 20px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: powderblue;
-    height: auto;
-    min-width: 1000px;
 }
 
 .movie-card {
     background-color: mediumturquoise;
-    margin: 20px;
+    margin: 10px auto;
     height: 400px;
-    width: 80%;
+    width: 60%;
     border: black solid 1px;
     border-radius: 25px;
-    padding: 15px;
     text-align: center;
 }
 
@@ -55,9 +52,9 @@ body {
 #watchlist {
     border: black solid 1px;
     border-radius: 25px;
-    margin: 50px;
+    margin: auto;
     position: fixed;
-    top: 750px;
+    top: 790px;
     padding: 20px 40px;
     width: 25%;
     background-color: mediumturquoise;
