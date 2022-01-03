@@ -55,6 +55,7 @@ body {
     border-radius: 25px;
     margin: 50px;
     position: fixed;
+    top: 750px;
     padding: 20px 40px;
     width: 25%;
     background-color: mediumturquoise;
