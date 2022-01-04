@@ -70,6 +70,7 @@ body {
 
 #sorter {
     text-align: center;
+    text-transform: uppercase;
 }
 
 #sort-movies {
